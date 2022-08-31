@@ -2,7 +2,7 @@
   "name": "profile-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://keshav.github.io/profile-app",
+  "homepage": "https://keshavc1623.github.io/profile-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
