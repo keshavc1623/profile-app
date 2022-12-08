@@ -1,0 +1,106 @@
+.about_me {
+
+    & .inner {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 50px;
+    }
+
+    &-skills {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        gap: 0px 10px;
+        padding: 0px;
+        margin: 20px 0px 0px;
+        overflow: hidden;
+        list-style: none;
+
+        & li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            font-family: var(--font-mono);
+            font-size: var(--fz-xs);
+        }
+
+        & li::before {
+            content: "▹";
+            position: absolute;
+            left: 0px;
+            color: var(--clr-text-primary);
+            font-size: var(--fz-sm);
+            line-height: 12px;
+        }
+    }
+
+    &-pic_section {
+        position: relative;
+        max-width: 350px;
+    }
+
+    & .wrapper {
+        box-shadow: 0 10px 30px -15px var(--navy-shadow);
+        transition: var(--transition);
+        display: block;
+        position: relative;
+        width: 100%;
+        border-radius: var(--border-radius);
+        background-color: var(--green);
+
+        &::before {
+            top: 0px;
+            left: 0px;
+            background-color: var(--navy);
+            mix-blend-mode: screen;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        &::after {
+            border: 2px solid var(--green);
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+        }
+
+        &:hover::after,
+        &:focus::after {
+            top: 15px;
+            left: 15px;
+        }
+
+        &:hover .img,
+        &:focus .img {
+            filter: none;
+            mix-blend-mode: normal;
+        }
+
+        &:hover,
+        &:focus {
+            outline: 0px;
+            box-shadow: 0 20px 30px -15px var(--navy-shadow);
+        }
+
+        & .img {
+            position: relative;
+            border-radius: var(--border-radius);
+            mix-blend-mode: multiply;
+            filter: grayscale(100%) contrast(1);
+            transition: var(--transition);
+
+            & img {
+                width: 100%;
+            }
+        }
+    }
+
+}

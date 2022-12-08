@@ -1,0 +1,111 @@
+.hero-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  // margin: 2rem 7rem;
+}
+
+.hero_text {
+
+  &_greet {
+    margin: 0px 0px 30px 4px;
+    color: var(--clr-text-primary);
+    font-family: var(--font-mono);
+    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+    font-weight: 400;
+  }
+
+  &_name {
+    font-weight: 600;
+    color: var(--clr-text-lightest) !important;
+    line-height: 1.1;
+  }
+
+  &_into_text {
+    margin: 20px 0px 0px;
+    max-width: 540px;
+  }
+
+}
+
+.big_heading {
+  margin: 0px;
+  font-size: clamp(40px, 8vw, 80px);
+  color: inherit;
+}
+
+.logo_face {
+  fill: var(--clr-text-primary);
+}
+
+.logo_nose {
+  fill: var(--clr-card-bg);
+}
+
+.logo_eye1,
+.logo_eye2 {
+  fill: var(--clr-card-bg);
+}
+
+.logo_eye1_inner,
+.logo_eye2_inner {
+  fill: var(--clr-text-primary);
+}
+
+.orientation_left {
+  width: 50px;
+  top: 50%;
+  left: 5rem;
+  position: fixed;
+  height: 50%;
+  // background-color: gray;
+}
+
+.orientation_right {
+  width: 50px;
+  top: 50%;
+  right: 5rem;
+  position: fixed;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.orientation_top_right {
+  width: 50px;
+  top: 10%;
+  right: 5rem;
+  position: fixed;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.mail {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
+  line-height: var(--fz-lg);
+  height: 100%;
+  display: flex;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  justify-content: space-between;
+}
+
+.mail::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 150px;
+  margin: 0px auto;
+  background-color: var(--light-slate);
+}
+
+.orientation_right a:hover,
+.orientation_right a:focus {
+  transform: translateY(-3px);
+}

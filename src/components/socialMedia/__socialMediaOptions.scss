@@ -1,0 +1,30 @@
+.social_media_icons_container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    & a {
+        width: 100%;
+        text-align: center;
+    }
+
+    & svg {
+        width: 20px;
+    }
+
+    & a:hover {
+        transform: translateY(-3px);
+        color: var(--clr-text-primary);
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 150px;
+        margin: 0px auto;
+        background-color: var(--light-slate);
+    }
+}
