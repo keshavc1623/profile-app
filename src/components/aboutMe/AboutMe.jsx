@@ -34,9 +34,9 @@ export const AboutMe = () => {
                     <div className='wrapper'>
                         <div className='img'>
                             <picture>
-                                <source srcSet="../../../public/profileImg3.png" />
+                                <source srcSet="profileImg3.png" />
                                 {/* <source srcset="img_girl.jpg" /> */}
-                                <img src="../../../public/profileImg3.png" alt="Beatles" />
+                                <img src="profileImg3.png" alt="Beatles" />
                             </picture>
                         </div>
                     </div>

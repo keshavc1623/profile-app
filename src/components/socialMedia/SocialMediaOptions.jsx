@@ -5,10 +5,10 @@ export const SocialMediaOptions = () => {
     return (
         <div className="social_media_icons_container">
             <a target='_blank' href="https://github.com/keshavc1623"><GitLogo /></a>
-            <a href="https://www.instagram.com/keshav_chauhan_/"><InstagramLogo /></a>
-            <a href="https://twitter.com/keshavc1623"><TwitterLogo /></a>
-            <a href="https://www.linkedin.com/in/keshav-chauhan-74a2a5141/"><LinkedInLogo /></a>
-            <a href="https://codepen.io/keshavc1632"><CodePenLogo /></a>
+            <a target='_blank' href="https://www.instagram.com/keshav_chauhan_/"><InstagramLogo /></a>
+            <a target='_blank' href="https://twitter.com/keshavc1623"><TwitterLogo /></a>
+            <a target='_blank' href="https://www.linkedin.com/in/keshav-chauhan-74a2a5141/"><LinkedInLogo /></a>
+            <a target='_blank' href="https://codepen.io/keshavc1632"><CodePenLogo /></a>
         </div>
     )
 }

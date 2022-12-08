@@ -29,7 +29,7 @@ function App() {
         <ThemeOptions />
       </div>
       <div className='orientation_right'>
-        <a className='mail' href="mailto:keshavc1623@gmail.com">keshavc1623@gmail.com</a>
+        <a className='mail' target='_blank' href="mailto:keshavc1623@gmail.com">keshavc1623@gmail.com</a>
       </div>
     </div>
   );
