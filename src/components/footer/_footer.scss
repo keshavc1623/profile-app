@@ -1,0 +1,43 @@
+@import '../../styles/mixin';
+
+.footer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    min-height: 7rem;
+    padding: 1.5rem;
+    text-align: center;
+
+
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    line-height: 1;
+
+    & a {
+        padding: 1rem;
+    }
+}
+
+.orientation_bottom {
+    display: none;
+
+    @include respond(tab-port) {
+        display: block;
+    }
+
+}
+
+.orientation_bottom .social_media_icons_container {
+    @include respond(tab-port) {
+        flex-direction: row;
+
+        &::after {
+            display: none;
+        }
+    }
+
+}

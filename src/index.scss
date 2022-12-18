@@ -1,3 +1,6 @@
+@import './styles/mixin.scss';
+
+
 *,
 *::after,
 *::before {
@@ -15,7 +18,9 @@
   --clr-text-primary: var(--green);
   --clr-bg-btn: var(--green-tint);
   --clr-text-secondry: var(--slate);
+  --clr-text-light-secondry: var(--light-slate);
   --clr-text-lightest: var(--lightest-slate);
+  --clr-lines-lighBg: var(--lightest-navy);
   --dark-navy: #020c1b;
   --navy: #0a192f;
   --light-navy: #112240;
@@ -32,22 +37,22 @@
   --blue: #57cbff;
   --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
   --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-  --fz-xxs: 12px;
-  --fz-xs: 13px;
-  --fz-sm: 14px;
-  --fz-md: 16px;
-  --fz-lg: 18px;
-  --fz-xl: 20px;
-  --fz-xxl: 22px;
-  --fz-heading: 32px;
-  --border-radius: 4px;
-  --nav-height: 100px;
-  --nav-scroll-height: 70px;
-  --tab-height: 42px;
-  --tab-width: 120px;
+  --fz-xxs: 1.2rem;
+  --fz-xs: 1.3rem;
+  --fz-sm: 1.4rem;
+  --fz-md: 1.6rem;
+  --fz-lg: 1.8rem;
+  --fz-xl: 2rem;
+  --fz-xxl: 2.2rem;
+  --fz-heading: 3.2rem;
+  --border-radius: .4rem;
+  --nav-height: 10rem;
+  --nav-scroll-height: 7rem;
+  --tab-height: 4.2rem;
+  --tab-width: 12rem;
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  --hamburger-width: 30px;
+  --hamburger-width: 3rem;
   --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
   --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
   --ham-after: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -57,8 +62,33 @@
 }
 
 html {
-  font-size: 62.5%;
+  // this definece what 1 rem is
+  font-size: 62.5%; // 10px
   scroll-behavior: smooth;
+
+
+
+
+
+  // width less then 1200px
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 8px, 9/16 = 50%
+  }
+
+  // width less then 900px
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  // width less then 600px
+  @include respond(phone) {
+    font-size: 40%; // 1rem = 8px, 8/16 = 50%    (not needed sice tab-port and phone have fontsize)
+  }
+
+  @include respond(big-desk) {
+    font-size: 75%;
+  }
+
 }
 
 body {
@@ -66,7 +96,7 @@ body {
 }
 
 body {
-  margin: 0px;
+  margin: 0;
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
@@ -84,14 +114,14 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0px 0px 10px;
+  margin: 0 0 1rem;
   font-weight: 600;
   color: var(--clr-text-lightest);
   line-height: 1.1;
 }
 
 p {
-  margin: 0px 0px 15px;
+  margin: 0 0 1.5rem;
 }
 
 .container {
@@ -101,11 +131,17 @@ p {
 }
 
 .section {
-  padding: 0 17rem;
-  height: 100vh;
+  padding: 9rem 26rem 2rem 26rem;
+  /* height: 93vh; */
   display: flex;
+  // margin: 2rem 0;
   flex-direction: column;
   justify-content: center;
+
+  // width less then 1200px
+  @include respond(tab-land) {
+    padding: 2rem 16rem;
+  }
 }
 
 a {
@@ -138,20 +174,18 @@ button {
   -webkit-box-align: center;
   align-items: center;
   position: relative;
-  margin: 10px 0px 40px;
+  margin: 1rem 0px 4rem;
   width: 100%;
-  font-size: clamp(26px, 5vw, var(--fz-heading));
+  font-size: clamp(2.6rem, 5vw, var(--fz-heading));
   white-space: nowrap;
 
   &::before {
     position: relative;
-    // top: 4px;
     counter-increment: section 1;
     content: "0" counter(section) ".";
-    margin-right: 10px;
+    margin-right: 1rem;
     color: var(--clr-text-primary);
     font-family: var(--font-mono);
-    // font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
     font-weight: 400;
   }
 
@@ -159,10 +193,9 @@ button {
     content: "";
     display: block;
     position: relative;
-    // top: -5px;
-    width: 300px;
-    height: 1px;
-    margin-left: 20px;
+    width: 100%;
+    height: .1rem;
+    margin-left: 2rem;
     background-color: var(--lightest-navy);
   }
 
@@ -173,7 +206,7 @@ button {
 .resume-button {
   color: var(--clr-text-primary);
   background-color: transparent;
-  border: 1px solid var(--clr-text-primary);
+  border: .1rem solid var(--clr-text-primary);
   border-radius: var(--border-radius);
   padding: 1.2rem 2rem;
   font-family: var(--font-mono);
@@ -181,7 +214,7 @@ button {
   text-decoration: none;
   cursor: pointer;
   transition: var(--transition);
-  margin-left: 15px;
+  margin-left: 1.5rem;
   font-size: var(--fz-xs);
 }
 
@@ -195,7 +228,7 @@ button {
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  height: 1px;
+  height: .1rem;
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
@@ -216,8 +249,8 @@ button {
   appearance: none;
   width: 2rem;
   height: 2rem;
-  outline: 3px solid var(--radio-color, currentColor);
-  outline-offset: 3px;
+  outline: .3rem solid var(--radio-color, currentColor);
+  outline-offset: .3rem;
   border-radius: 50%;
 
 }
@@ -251,26 +284,24 @@ button {
   --clr-card-bg: #000000;
   --clr-text-primary: #1098F7;
   --clr-text-secondry: #DECCCC;
+  --clr-text-light-secondry: #c5b5b5;
+
   --clr-text-lightest: #FFFFFF;
   --clr-bg-btn: #1097f72c;
+  --clr-lines-lighBg: var(--white);
+
 }
 
 
 :root:has(#light:checked) {
-  --clr-body-bg: #f5f3f4;
-  --clr-card-bg: #f5f3f4;
-  --clr-text-primary: #161a1d;
-  --clr-text-secondry: #0b090a;
-  --clr-text-lightest: #660708;
-  --clr-bg-btn: #161a1d2e;
-}
+  --clr-body-bg: #F4F1BB;
+  --clr-card-bg: #F4F1BB;
+  --clr-text-primary: #CD5334;
+  --clr-text-secondry: #2E282A;
+  --clr-text-light-secondry: #4e4447;
 
+  --clr-text-lightest: #0b090a;
+  --clr-bg-btn: #cd53343c;
+  --clr-lines-lighBg: var(--lightest-slate);
 
-:root:has(#green:checked) {
-  --clr-body-bg: #06A77D;
-  --clr-card-bg: #06A77D;
-  --clr-text-primary: #F8F32B;
-  --clr-text-secondry: #003f5e;
-  --clr-text-lightest: #CBBFBB;
-  --clr-bg-btn: #f8f52b33;
 }

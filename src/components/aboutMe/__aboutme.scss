@@ -1,24 +1,32 @@
+@import '../../styles/mixin';
+
 .about_me {
 
     & .inner {
         display: grid;
         grid-template-columns: 3fr 2fr;
-        gap: 50px;
+        gap: 5rem;
+
+        @include respond(tab-port) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &-skills {
         display: grid;
-        grid-template-columns: repeat(2, minmax(140px, 200px));
-        gap: 0px 10px;
+        grid-template-columns: repeat(2, minmax(14rem, 20rem));
+        gap: 0px 1rem;
         padding: 0px;
-        margin: 20px 0px 0px;
+        margin: 2rem 0px 0px;
         overflow: hidden;
         list-style: none;
 
         & li {
             position: relative;
-            margin-bottom: 10px;
-            padding-left: 20px;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
             font-family: var(--font-mono);
             font-size: var(--fz-xs);
         }
@@ -29,23 +37,23 @@
             left: 0px;
             color: var(--clr-text-primary);
             font-size: var(--fz-sm);
-            line-height: 12px;
+            line-height: 1.2rem;
         }
     }
 
     &-pic_section {
         position: relative;
-        max-width: 350px;
+        max-width: 35rem;
     }
 
     & .wrapper {
-        box-shadow: 0 10px 30px -15px var(--navy-shadow);
+        box-shadow: 0 1rem 3rem -1.5rem var(--navy-shadow);
         transition: var(--transition);
         display: block;
         position: relative;
         width: 100%;
         border-radius: var(--border-radius);
-        background-color: var(--green);
+        background-color: var(--clr-text-primary);
 
         &::before {
             top: 0px;
@@ -66,16 +74,16 @@
         }
 
         &::after {
-            border: 2px solid var(--green);
-            top: 20px;
-            left: 20px;
+            border: 2px solid var(--clr-text-primary);
+            top: 2rem;
+            left: 2rem;
             z-index: -1;
         }
 
         &:hover::after,
         &:focus::after {
-            top: 15px;
-            left: 15px;
+            top: 1.5rem;
+            left: 1.5rem;
         }
 
         &:hover .img,
@@ -87,7 +95,7 @@
         &:hover,
         &:focus {
             outline: 0px;
-            box-shadow: 0 20px 30px -15px var(--navy-shadow);
+            box-shadow: 0 2rem 3rem -1.5rem var(--navy-shadow);
         }
 
         & .img {

@@ -10,7 +10,7 @@ z-index: 10;
 width: 2px;
 height: var(--tab-height);
 border-radius: var(--border-radius);
-background: var(--green);
+background: var(--clr-text-primary);
 transform: translateY(calc(${props => props.index} * var(--tab-height)));
 transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
 `
@@ -50,12 +50,33 @@ let organizations = [
         ],
         timePeriod: 'sep 2020 - present'
     },
+    {
+        name: 'Moblty India',
+        role: 'Software Developer',
+        at: 'moblity india pvt ltd',
+        discription: ['Write modern, performant, maintainable code for a Chat Assist bot of client projects',
+            'Work with a variety of different languages, platforms, frameworks such as JavaScript, TypeScript, React, GoogleDilogeFlow and Java',
+            'Build multiple featurs for the application from scratch like Navigation Tour of the App, Notification Pannel, Dynamic menu with Rotating tips etc.',
+            'Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis'
+        ],
+        timePeriod: 'sep 2020 - present'
+    },
+    {
+        name: 'Moblty India',
+        role: 'Software Developer',
+        at: 'moblity india pvt ltd',
+        discription: ['Write modern, performant, maintainable code for a Chat Assist bot of client projects',
+            'Work with a variety of different languages, platforms, frameworks such as JavaScript, TypeScript, React, GoogleDilogeFlow and Java',
+            'Build multiple featurs for the application from scratch like Navigation Tour of the App, Notification Pannel, Dynamic menu with Rotating tips etc.',
+            'Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis'
+        ],
+        timePeriod: 'sep 2020 - present'
+    },
 ]
 
 const Organizations = (props) => {
     return (
         organizations.map((org, ind) => {
-            // console.log(ind)
             return (
                 <button className={`job ${ind === props.currentIndex ? 'active' : ''}`} onClick={() => props.handleClick(ind)}>
                     {org.name}
@@ -105,7 +126,7 @@ export const Work = () => {
             <div className='inner'>
                 <div role='tablist' className='jobs'>
                     <Organizations currentIndex={index} handleClick={handleClick} />
-                    <StyledLine index={index} />
+                    <StyledLine className='left-line' index={index} />
                 </div>
                 <div className='job_discription'>
                     <OrganizationsDiscription discription={organizations[index]} />

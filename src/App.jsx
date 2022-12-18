@@ -9,27 +9,30 @@ import { Projects } from './components/projects/Projects';
 import { ThemeOptions } from './components/themeOptions/ThemeOptions';
 import { Work } from './components/work/work';
 import { SocialMediaOptions } from './components/socialMedia/SocialMediaOptions'
+import { Footer } from './components/footer/Footer';
 
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className='orientation_left'>
-        <SocialMediaOptions />
-      </div>
+
       <div className='main'>
         <IntroPage />
         <AboutMe />
         <Work />
         <Projects />
         <Contact />
+        <Footer />
       </div>
       <div className='orientation_top_right'>
         <ThemeOptions />
       </div>
       <div className='orientation_right'>
         <a className='mail' target='_blank' href="mailto:keshavc1623@gmail.com">keshavc1623@gmail.com</a>
+      </div>
+      <div className='orientation_left'>
+        <SocialMediaOptions />
       </div>
     </div>
   );

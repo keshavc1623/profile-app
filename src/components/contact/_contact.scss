@@ -1,10 +1,10 @@
 .contact {
-    margin: 0px auto 100px;
+    margin: 0px auto 10rem;
     text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 60rem;
 
     & .numbered-heading::after {
         content: "";
@@ -12,15 +12,15 @@
     }
 
     & .title {
-        font-size: clamp(40px, 5vw, 60px);
+        font-size: clamp(4rem, 5vw, 6rem);
         width: max-content;
     }
 }
 
 .email_link {
-    color: var(--green);
+    color: var(--clr-text-primary);
     background-color: transparent;
-    border: 1px solid var(--green);
+    border: 1px solid var(--clr-text-primary);
     border-radius: var(--border-radius);
     padding: 2rem 2.75rem;
     font-size: var(--fz-sm);
@@ -29,21 +29,21 @@
     text-decoration: none;
     cursor: pointer;
     transition: var(--transition);
-    margin-top: 50px;
+    margin-top: 5rem;
 }
 
 .email_link:hover,
 .email_link:focus,
 .email_link:active {
-    background-color: var(--green-tint);
+    background-color: var(--clr-bg-btn);
     outline: none;
 }
 
 
 .overline {
     display: block;
-    margin-bottom: 20px;
-    color: var(--green);
+    margin-bottom: 2rem;
+    color: var(--clr-text-primary);
     font-family: var(--font-mono);
     font-size: var(--fz-md);
     font-weight: 400;

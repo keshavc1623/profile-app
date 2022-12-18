@@ -8,20 +8,18 @@
     // position: absolute;
     padding: 0 3rem;
     overflow: hidden;
-    box-shadow: 0px 4px 22px rgb(116 130 151 / 45%);
+    box-shadow: 0px .4rem 2.2rem rgb(116 130 151 / 45%);
     transition: all 0.3s ease-out;
     color: var(--clr-text-lightest);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
     font-weight: 600;
-
-
 }
 
 .navbar.floating_navbar {
     // height: 6rem;
-    box-shadow: 0px 4px 22px rgb(116 130 151 / 45%);
-    border-radius: 30px;
+    box-shadow: 0px .4rem 2.2rem rgb(116 130 151 / 45%);
+    border-radius: 3rem;
     top: 2rem;
     transform: scale(0.75, 0.85);
     transition: all 0.3s ease-out;
@@ -44,7 +42,7 @@
 }
 
 .nav_item {
-    margin: 0px 15px;
+    margin: 0px 1.5rem;
     position: relative;
     counter-increment: item 1;
     font-size: inherit;
@@ -53,7 +51,7 @@
 
 .nav_item a::before {
     content: "0" counter(item) ".";
-    margin-right: 5px;
+    margin-right: .5rem;
     color: var(--clr-text-primary);
     // font-size: var(--fz-xxs);
     text-align: right;
@@ -72,10 +70,10 @@
 
 .element {
     position: absolute;
-    width: 100px;
+    width: 10rem;
     border-radius: 5rem;
-    height: 100px;
-    box-shadow: 0px 0px 45px rgb(255 255 255 / 72%);
+    height: 10rem;
+    box-shadow: 0px 0px 4.5rem rgb(255 255 255 / 72%);
     top: -5rem;
     left: -8rem;
     z-index: -3;
@@ -90,7 +88,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -30px;
+    left: -3rem;
 
 }
 
