@@ -140,7 +140,15 @@ p {
 
   // width less then 1200px
   @include respond(tab-land) {
-    padding: 2rem 16rem;
+    padding: 4rem 16rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 8rem 8rem;
+  }
+
+  @include respond(phone) {
+    padding: 12rem 4rem;
   }
 }
 

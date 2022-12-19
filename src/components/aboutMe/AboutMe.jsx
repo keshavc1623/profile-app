@@ -1,5 +1,5 @@
 import './__aboutme.scss'
-
+import profileImg from '../../../dist/profileImg3.png'
 
 export const AboutMe = () => {
     return (
@@ -34,9 +34,9 @@ export const AboutMe = () => {
                     <div className='wrapper'>
                         <div className='img'>
                             <picture>
-                                <source srcSet="profileImg3.png" />
+                                <source srcSet={profileImg} />
                                 {/* <source srcset="img_girl.jpg" /> */}
-                                <img src="profileImg3.png" alt="Beatles" />
+                                <img src={profileImg} alt="Beatles" />
                             </picture>
                         </div>
                     </div>
